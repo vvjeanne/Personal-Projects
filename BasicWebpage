@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US" class="dark" style="color-scheme: dark;"
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      {
+        box-sizing: border-box;
+        font-family: Verdana, sans-serif;
+      }
+     body {
+       margin: 0;
+       font-family: Verdana, sans-serif;
+      }
+      .topnav {
+        padding: 10px;
+        background-color: #9575cd;
+        text-align: center;
+      }
+      .content {
+        background-color: #d1c4e9;
+        padding: 10px;
+        color: #4a148c;
+        text-align: center;
+      }
+      .footer {
+        background-color: #9575cd;
+        padding: 10px;
+        text-align: center;
+        color: #4a148c;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topnav">
+      <a href="https://www.linkedin.com/in/ava-j-lindgren"><img src="https://img.icons8.com/ios11/512/linkedin.png" target="_blank" style="width:22px;height:22px;"></a>
+    </div>
+    <div class="content">
+      <img src="https://tinyurl.com/y8jc3f4j">
+    <h2>Ava Lindgren</h2>
+    <p>I am a computer science student at Southern New Hampshire University learning how to become a better programmer.</p>
+    </div>
+    <div class="footer">
+      <p> <a href="">View my Resume</a></p>
+    </div>
+  </body>
+</html>

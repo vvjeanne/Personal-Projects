@@ -1,0 +1,86 @@
+// Ava Lindgren - Sophia Learning: Introduction to Java Programming
+// Touchstone 4 Final Project
+
+import java.util.Scanner; // import .Scanner for getting input from user
+
+public class Main { // create a class for Main program
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        boolean repeat = true;
+
+        while (repeat) {
+
+            // get input weather from user
+            String weather = ""; // initialize weather variable
+            while (true) { // start while true loop
+                System.out.println("\nIs it sunny or cloudy? (Enter 'sunny' or 'cloudy')\n");
+                weather = scanner.nextLine().trim().toLowerCase();
+                if (weather.equals("sunny") || weather.equals("cloudy")) {
+                    break; // valid input exit loop
+                } else { // invalid input ask user to input a valid statement
+                    System.out.println("\nInvalid input. Please enter 'sunny' or 'cloudy'.");
+                }
+            }
+
+            // input temperature range from user
+            int tempRange = 0; // 1 for <= 49, 2 for 50-70, 3 for >= 71
+            while (true) {
+                System.out.println("\nWhat is the temperature range?\n");
+                System.out.println("Enter 1 for 49 degrees and below");
+                System.out.println("Enter 2 for 50 degrees to 70 degrees");
+                System.out.println("Enter 3 for 71 degrees and above\n");
+                try {
+                    tempRange = Integer.parseInt(scanner.nextLine().trim());
+                    if (tempRange >= 1 && tempRange <= 3) {
+                        break; // valid input, exit loop
+                    } else {
+                        System.out.println("Invalid input. Please enter 1, 2, or 3.\n");
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid input. Please enter a number (1, 2, or 3).\n");
+                }
+            }
+
+            // determine and output the clothing suggestion
+            System.out.println("\nClothing Suggestion:");
+
+            if (tempRange == 1) { // 49 degrees and below
+                System.out.println("Wear long sleeves.");
+            } else if (tempRange == 2) { // 50 to 70 degrees
+                if (weather.equals("sunny")) {
+                    System.out.println("Wear a tank top or short sleeves.");
+                } else { // for cloudy weather
+                    System.out.println("Wear short sleeves or long sleeves.");
+                }
+            } else { // tempRange is option 3, 71 degrees and above
+                if (weather.equals("sunny")) {
+                    System.out.println("Wear a tank top and consider wearing sunscreen.");
+                } else { // for cloudy weather
+                    System.out.println("Wear a tank top.");
+                }
+            }
+
+            System.out.println("-------------------------");
+
+            // ask user if they want to repeat
+            while (true) {
+                System.out.println("Do you want to repeat? (yes/no)");
+                String repeatInput = scanner.nextLine().trim().toLowerCase();
+                if (repeatInput.equals("yes")) {
+                    repeat = true;
+                    break; // exit repeat input loop
+                } else if (repeatInput.equals("no")) {
+                    repeat = false;
+                    break; // exit repeat input loop
+                } else {
+                    System.out.println("Invalid input. Please enter 'yes' or 'no'.");
+                }
+            }
+        }
+
+        scanner.close(); // close the scanner when done
+        System.out.println("\nThanks for using the Clothing Advisor tool!");
+    }
+}
